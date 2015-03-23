@@ -46,7 +46,7 @@ document.getElementById('search-bar').onsubmit=function() {
     };
 
     // request.open("GET","https://api.year4000.net/accounts/" + feild.value + "?compact", true);
-    request.open("GET","https://us.mc-api.net/v3/uuid/" + feild.value, true);
+    request.open("GET","https://mc-api.net/v3/uuid/" + feild.value, true);
     request.send();
     return false;
 }

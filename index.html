@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Minecraft UUID Fetcher - ewized</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
+    </head>
+
+    <body>
+        <div class="panel panel-default">
+            <div class="panel-heading">Fetch a Minecraft username's UUID</div>
+            <div class="panel-body">
+                <form id="search-bar" action="#">
+                    <div class="input-group">
+                        <input id="data" required type="text" class="form-control" placeholder="Enter Minecraft username...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Search</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-info" id="results">
+                <div id="result-loading"><img height="25" width="25" src="https://cdn.year4000.net/img/loading.gif" /></div>
+                <div id="result-container">
+                    <img id="result-img" height="32" width="32" />
+                    <span id="result-name"></span>
+                    <input id="result-uuid" class="text-center" readonly size="35" type="text"> 
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Load JavaScript after page loads faster -->
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">$('[data-toggle="tooltip"]').tooltip();</script>
+
+        <div id="bg"></div>
+        <div id="bg-overlay"></div>
+    </body>
+</html>

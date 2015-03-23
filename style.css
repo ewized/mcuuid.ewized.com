@@ -1,0 +1,45 @@
+body {
+	margin: 20% 10% 0% 10%;
+}
+
+#bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: url("https://cdn.year4000.net/img/bg.png");
+    background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    z-index: -1000;
+
+}
+
+#bg-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,102,136,0.4);
+    z-index: -900;
+}
+
+#results {
+    text-align: center;
+    margin: 2%;
+    padding: 5px;
+    font-size: 18px;
+    overflow: auto;
+    word-wrap: normal;
+}
+
+#results * {
+    margin: 2px 5px;
+}
+
+#results, #result-container, #result-loading {
+    display: none;
+}

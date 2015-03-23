@@ -21,6 +21,12 @@ document.getElementById('search-bar').onsubmit=function() {
     	// Grab data and assing feilds
         try {
             var response = JSON.parse(request.responseText);
+            
+            // If error exists throw the message
+            if (response.error != null) {
+            	throw response.error;
+            }
+
             var base = "https://api.year4000.net/avatar/" + response.name + "/32?hat";
 
             result_img.src = base;
@@ -29,7 +35,6 @@ document.getElementById('search-bar').onsubmit=function() {
             results.className = "bg-success";
             result_loading.style.display = "none";
             result_container.style.display = "block";
-
         }
         // When error grabing data show dummy
         catch(e) {

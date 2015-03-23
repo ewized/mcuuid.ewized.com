@@ -17,7 +17,7 @@ document.getElementById('search-bar').onsubmit=function() {
     result_container.style.display = "none";
 
     var request = new XMLHttpRequest();
-    request.onload=  function() {
+    request.onload =  function() {
     	// Grab data and assing feilds
         try {
             var response = JSON.parse(request.responseText);

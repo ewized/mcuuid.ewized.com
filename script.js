@@ -8,6 +8,7 @@ document.getElementById('search-bar').onsubmit = function() {
     var result_img =document.getElementById('result-img');
     var result_name = document.getElementById('result-name');
     var result_uuid = document.getElementById('result-uuid');
+    var nameSearch = feild.value.split("-").length == 5;
 
     // Set up the html before loading
     feild.disabled = true;
@@ -39,8 +40,8 @@ document.getElementById('search-bar').onsubmit = function() {
         // When error grabing data show dummy
         catch(e) {
             result_img.src = "https://api.year4000.net/avatar/" + feild.value + "/32?hat";
-            result_name.innerHTML = feild.value;
-            result_uuid.value = "Unknown UUID";
+            result_name.innerHTML = !nameSearch ? feild.value : "Unknown Name";
+            result_uuid.value = nameSearch ? feild.value : "Unknown UUID";
             results.className = "bg-warning";
             result_loading.style.display = "none";
             result_container.style.display = "block";
@@ -50,8 +51,13 @@ document.getElementById('search-bar').onsubmit = function() {
         }
     };
 
-    // request.open("GET","https://api.year4000.net/accounts/" + feild.value + "?compact", true);
-    request.open("GET","https://mc-api.net/v3/uuid/" + feild.value, true);
+    // Search via uuid or username
+    if (nameSearch) {
+        request.open("GET","https://mc-api.net/v3/name/" + feild.value, true);
+    }
+    else {
+        request.open("GET","https://mc-api.net/v3/uuid/" + feild.value, true);
+    }
     request.send();
     return false;
 }

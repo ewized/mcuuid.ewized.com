@@ -1,5 +1,5 @@
 /** Fetch account info from a public database */
-document.getElementById('search-bar').onsubmit=function() {
+document.getElementById('search-bar').onsubmit = function() {
     // Declare vars
     var feild = document.getElementById('data');  
     var results = document.getElementById('results');
@@ -18,13 +18,13 @@ document.getElementById('search-bar').onsubmit=function() {
 
     var request = new XMLHttpRequest();
     request.onload =  function() {
-    	// Grab data and assing feilds
+        // Grab data and assing feilds
         try {
             var response = JSON.parse(request.responseText);
             
             // If error exists throw the message
             if (response.error != null) {
-            	throw response.error;
+                throw response.error;
             }
 
             var base = "https://api.year4000.net/avatar/" + response.name + "/32?hat";

@@ -1,5 +1,14 @@
 body {
+    background: #ddd;
     margin: 12% 10% 0% 10%;
+}
+
+#logo img {
+    display: inline-block;
+    max-height: 120px;
+    width: 100%;
+    background: url("http://i.imgur.com/YR6Rw1R.png") no-repeat center;
+    background-size: contain;
 }
 
 #bg {
@@ -8,13 +17,9 @@ body {
     left: 0px;
     height: 100%;
     width: 100%;
-    background: url("https://cdn.year4000.net/img/bg.png");
+    background: url("https://unsplash.it/256/?image=456&blur");
     background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     z-index: -1000;
-
 }
 
 #bg-overlay {
@@ -23,7 +28,7 @@ body {
     left: 0px;
     height: 100%;
     width: 100%;
-    background: rgba(0,102,136,0.4);
+    background: rgba(0, 0, 0, 0.6);
     z-index: -900;
 }
 
@@ -36,10 +41,62 @@ body {
     word-wrap: normal;
 }
 
-#results * {
+#result-container *, #result-loading {
     margin: 2px 5px;
 }
 
 #results, #result-container, #result-loading {
     display: none;
+}
+
+#result-uuid {
+    display: inline-block;
+    width: 300px;
+    height: 32px;
+}
+
+.panel-heading {
+    background: rgba(0,102,136,0.4) !important;
+
+}
+
+.panel {
+    box-shadow: 0 0 10px #333;
+}
+
+#footer {
+    font-size: 22px;
+    position: absolute;
+    bottom: 5px;
+    width: 80%;
+    color: #aaa;
+}
+
+#footer-cell {
+    display: inline-block;
+    width: 20%;
+}
+
+#footer a {
+    color: #17a;
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: #09f;
+}
+
+::-webkit-input-placeholder {
+    color: #666 !important;
+}
+:-moz-placeholder {
+   color: #666 !important;
+   opacity: 1;
+}
+::-moz-placeholder {
+   color: #666 !important;
+   opacity: 1;
+}
+:-ms-input-placeholder {
+   color: #666 !important;
 }

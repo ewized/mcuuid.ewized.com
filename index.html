@@ -1,47 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Minecraft UUID Fetcher - ewized</title>
+        <title>Minecraft UUID Fetcher - mcuuid.ewized.com</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Simple elegant web app to grab Minecraft UUIDs from their username."/>
+        <meta name="keywords" content="Minecraft, Mojang, ewized, UUID, Fetcher"/>
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="style.css" />
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
     </head>
 
     <body>
+        <div class="text-center" id="logo">
+            <a href="https://www.ewized.com/" target="_blank" title="See more projects by ewized!">
+                <img src="http://i.imgur.com/G0yY19M.png" />
+            </a>
+            <br />
+            <br />
+        </div>
+
         <div class="panel panel-default">
-            <div class="panel-heading">Fetch a Minecraft username's UUID</div>
             <div class="panel-body">
                 <form id="search-bar" action="#">
                     <div class="input-group">
-                        <input id="data" required type="text" class="form-control" placeholder="Enter Minecraft username...">
+                        <input id="data" required type="text" class="form-control" placeholder="Enter a Minecraft username...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Search</button>
+                            <button class="btn btn-default" type="submit"><span class="fa">&#xf002;</span></button>
                         </span>
                     </div>
                 </form>
             </div>
 
             <div class="bg-info" id="results">
-                <div id="result-loading"><img height="25" width="25" src="https://cdn.year4000.net/img/loading.gif" /></div>
+                <div id="result-loading" class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%"></div>
+                </div>
                 <div id="result-container">
                     <img id="result-img" height="32" width="32" />
                     <span id="result-name"></span>
-                    <input id="result-uuid" class="text-center" readonly size="35" type="text"> 
+                    <input id="result-uuid" class="text-center form-control" readonly size="35" type="text" 
                 </div>
             </div>
 
         </div>
 
+        <div id="bg"></div>
+        <div id="bg-overlay"></div>
+
+        <footer id="footer" class="text-center fa">
+            <div id="footer-cell">
+                <a href="https://github.com/ewized" target="_blank">
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="GitHub">
+                        &#xf09b;
+                    </span>
+                </a>
+                <a href="https://twitter.com/ewized" target="_blank">
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="Twitter">
+                        &#xf099;
+                    </span>
+                </a>
+                <a href="https://www.youtube.com/c/ewized" target="_blank">
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="YouTube">
+                        &#xf16a;
+                    </span>
+                </a>
+                <a href="https://www.ewized.com" target="_blank">
+                    <span data-toggle="tooltip" data-placement="top" data-original-title="ewized.com">
+                        &#xf0c1;
+                    </span>
+                </a>
+            </div>
+        </footer>
+
         <!-- Load JavaScript after page loads faster -->
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript">$('[data-toggle="tooltip"]').tooltip();</script>
-
-        <div id="bg"></div>
-        <div id="bg-overlay"></div>
     </body>
 </html>

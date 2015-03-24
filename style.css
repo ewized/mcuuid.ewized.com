@@ -1,6 +1,6 @@
 body {
     background: #ddd;
-    margin: 12% 10% 0% 10%;
+    margin: 12% 20% -55px 20%;
 }
 
 #logo img {
@@ -51,7 +51,7 @@ body {
 
 #result-uuid {
     display: inline-block;
-    width: 300px;
+    width: 280px;
     height: 32px;
 }
 
@@ -64,12 +64,15 @@ body {
     box-shadow: 0 0 10px #333;
 }
 
+#content {
+    height: 100%;
+}
+
 #footer {
     font-size: 22px;
-    position: absolute;
-    bottom: 5px;
-    width: 80%;
+    width: 100%;
     color: #aaa;
+    z-index: -500;
 }
 
 #footer-cell {
@@ -86,6 +89,11 @@ body {
     color: #09f;
 }
 
+#footer a:active, #footer a:visited, #footer a:focus {
+    text-decoration: none;
+    color: #18e;
+}
+
 ::-webkit-input-placeholder {
     color: #666 !important;
 }
@@ -99,4 +107,10 @@ body {
 }
 :-ms-input-placeholder {
    color: #666 !important;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 8% 3% 0% 3%;
+    }
 }

@@ -10,46 +10,49 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css?v=1" />
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
     </head>
 
     <body>
-        <div class="text-center" id="logo">
-            <a href="https://www.ewized.com/" target="_blank" title="See more projects by ewized!">
-                <img src="https://i.imgur.com/G0yY19M.png" />
-            </a>
-            <br />
-            <br />
-        </div>
+        <div id="content">
+            <div class="text-center" id="logo">
+                <a href="https://www.ewized.com/" target="_blank" title="See more projects by ewized!">
+                    <img src="https://i.imgur.com/G0yY19M.png" />
+                </a>
+                <br />
+                <br />
+            </div>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <form id="search-bar" action="#">
-                    <div class="input-group">
-                        <input id="data" required type="text" class="form-control" placeholder="Enter a Minecraft username...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><span class="fa">&#xf002;</span></button>
-                        </span>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form id="search-bar" action="#">
+                        <div class="input-group">
+                            <input id="data" required type="text" class="form-control" placeholder="Enter a Minecraft username...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><span class="fa">&#xf002;</span></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-info" id="results">
+                    <div id="result-loading" class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%"></div>
                     </div>
-                </form>
+                    <div id="result-container">
+                        <img id="result-img" height="32" width="32" />
+                        <span id="result-name"></span>
+                        <input id="result-uuid" class="text-center form-control" readonly size="35" type="text" 
+                    </div>
+                </div>
+
             </div>
 
-            <div class="bg-info" id="results">
-                <div id="result-loading" class="progress">
-                  <div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%"></div>
-                </div>
-                <div id="result-container">
-                    <img id="result-img" height="32" width="32" />
-                    <span id="result-name"></span>
-                    <input id="result-uuid" class="text-center form-control" readonly size="35" type="text" 
-                </div>
-            </div>
-
+            <div id="bg"></div>
+            <div id="bg-overlay"></div>
         </div>
 
-        <div id="bg"></div>
-        <div id="bg-overlay"></div>
 
         <footer id="footer" class="text-center fa">
             <div id="footer-cell">
@@ -77,7 +80,7 @@
         </footer>
 
         <!-- Load JavaScript after page loads faster -->
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="script.js?v=1"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript">$('[data-toggle="tooltip"]').tooltip();</script>
     </body>

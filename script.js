@@ -1,6 +1,6 @@
 /** Fetch account info from a public database */
 document.getElementById('search-bar').onsubmit=function() {
-	// Declare vars
+    // Declare vars
     var feild = document.getElementById('data');  
     var results = document.getElementById('results');
     var result_loading = document.getElementById('result-loading');

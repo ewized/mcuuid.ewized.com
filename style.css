@@ -52,7 +52,8 @@ body {
 #result-uuid {
     display: inline-block;
     width: 300px;
-    height: 32px;
+    height: 35px;
+    padding: 5px;
 }
 
 .panel-heading {

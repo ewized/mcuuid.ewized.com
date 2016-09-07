@@ -26,14 +26,14 @@ document.getElementById('search-bar').onsubmit = function() {
             if (response.code != null) {
                 throw response.msg;
             }
-            result_img.src = "https://api.year4000.net/avatar/" + response.uuid + "/32";
+            result_img.src = "https://api.year4000.net/avatar/" + response.uuid + "?size=32";
             result_name.innerHTML = response.name;
             result_uuid.value = response.uuid;
             results.className = "bg-success";
             result_loading.style.display = "none";
             result_container.style.display = "block";
         } catch(e) { // When error grabing data show dummy
-            result_img.src = "https://api.year4000.net/avatar/" + feild.value + "/32?hat";
+            result_img.src = "https://api.year4000.net/avatar/" + feild.value + "?size=32";
             result_name.innerHTML = !nameSearch ? feild.value : "Unknown Name";
             result_uuid.value = nameSearch ? feild.value : "Unknown UUID";
             results.className = "bg-warning";

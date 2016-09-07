@@ -18,46 +18,33 @@ document.getElementById('search-bar').onsubmit = function() {
     result_container.style.display = "none";
 
     var request = new XMLHttpRequest();
-    request.onload =  function() {
+    request.onload = function() {
         // Grab data and assing feilds
         try {
             var response = JSON.parse(request.responseText);
-            
             // If error exists throw the message
-            if (response.error != null) {
-                throw response.error;
+            if (response.code != null) {
+                throw response.msg;
             }
-
-            var base = "https://api.year4000.net/avatar/" + response.name + "/32?hat";
-
-            result_img.src = base;
+            result_img.src = "https://api.year4000.net/avatar/" + response.uuid + "/32";
             result_name.innerHTML = response.name;
-            result_uuid.value = response.full_uuid;
+            result_uuid.value = response.uuid;
             results.className = "bg-success";
             result_loading.style.display = "none";
             result_container.style.display = "block";
-        }
-        // When error grabing data show dummy
-        catch(e) {
+        } catch(e) { // When error grabing data show dummy
             result_img.src = "https://api.year4000.net/avatar/" + feild.value + "/32?hat";
             result_name.innerHTML = !nameSearch ? feild.value : "Unknown Name";
             result_uuid.value = nameSearch ? feild.value : "Unknown UUID";
             results.className = "bg-warning";
             result_loading.style.display = "none";
             result_container.style.display = "block";
-        }
-        finally {
+        } finally {
             feild.disabled = false;
         }
     };
 
-    // Search via uuid or username
-    if (nameSearch) {
-        request.open("GET","https://mc-api.net/v3/name/" + feild.value, true);
-    }
-    else {
-        request.open("GET","https://mc-api.net/v3/uuid/" + feild.value, true);
-    }
+    request.open("GET", "https://api.year4000.net/minecraft/" + feild.value, true);
     request.send();
     return false;
 }

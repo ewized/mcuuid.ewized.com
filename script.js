@@ -27,7 +27,7 @@ document.getElementById('search-bar').onsubmit = function() {
                 throw response.msg;
             }
             result_img.src = "https://api.year4000.net/avatar/" + response.uuid + "?size=32";
-            result_name.innerHTML = response.name;
+            result_name.innerHTML = response.username;
             result_uuid.value = response.uuid;
             results.className = "bg-success";
             result_loading.style.display = "none";
